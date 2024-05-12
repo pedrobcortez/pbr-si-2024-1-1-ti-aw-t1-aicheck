@@ -38,3 +38,4 @@ O público alvo será principalmente de celebridades, influencers, pessoas públ
 [Entrevista.docx](https://github.com/ICEI-PUC-Minas-PBR-SI/pbr-si-2024-1-1-ti-aw-t1-aicheck/files/15055849/Entrevista.docx)
 
 [Empatia 01 - Coleta - Entrevista Qualitativa 1.docx](https://github.com/ICEI-PUC-Minas-PBR-SI/pbr-si-2024-1-1-ti-aw-t1-aicheck/files/15055852/Empatia.01.-.Coleta.-.Entrevista.Qualitativa.1.docx)
+
