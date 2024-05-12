@@ -12,12 +12,12 @@ O nosso aplicativo permite encontrar informações pertinentes e gerenciar o tem
 
 ## Objetivos
 
-Objetivo geral:
+## Objetivo geral:
 
 Fornecer aos usuários um local online para encontrar uma variedade de eventos, desde concertos e festivais até seminários e conferências, todos reunidos into um único local. O site visa tornar mais fácil encontrar, explorar e participar de vários eventos, fornecendo uma plataforma ampla e acessível para entusiastas de todas as idades e interesses.
 
 
-"Objetivos específicos:
+## Objetivos específicos:
 
 Desenvolver algoritmos avançados de detecção: Nosso objetivo é criar algoritmos sofisticados de análise de imagem e vídeo, capazes de identificar características distintivas associadas a conteúdo gerado por inteligência artificial.
 Aperfeiçoar constantemente nossas soluções: Comprometemo-nos a realizar pesquisas contínuas e aprimoramentos em nossos métodos de detecção, garantindo que estejamos sempre à frente das técnicas de manipulação de mídia.
