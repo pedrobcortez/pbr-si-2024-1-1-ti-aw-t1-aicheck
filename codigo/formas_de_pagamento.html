@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formas de Pagamento</title>
+  <link rel="stylesheet" href="stylepagamento.css">
+</head>
+<body>
+  <div class="phone">
+  <img src="C:\Users\Pedro\Pictures\pbr-si-2024-1-1-ti-aw-t1-aicheck-main\docs\img\celular.jpg"  width=370 height=640>
+    <div class="screen">
+      <a href="criar_evento.html" class="back-button">&#8592;</a>
+      <h2><br /></h2>
+      <form id="paymentForm" class="payment-form">
+        <div class="payment-options">
+          <input type="radio" id="debito" name="paymentMethod" value="debito" required>
+          <label for="debito">Débito</label>
+          
+          <input type="radio" id="credito" name="paymentMethod" value="credito" required>
+          <label for="credito">Crédito</label>
+          
+          <input type="radio" id="pix" name="paymentMethod" value="pix" required>
+          <label for="pix">PIX</label>
+        </div>
+
+        <div id="pixDetails" style="display: none;">
+          <p>Chave PIX: exemplo@pix.com</p>
+        </div>
+
+        <input type="submit" value="Confirmar Pagamento">
+      </form>
+
+      <div class="android-buttons">
+        <div class="button"></div>
+        <div class="button"></div>
+        <div class="button"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("paymentForm").addEventListener("change", function(event) {
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+      const cardDetails = document.getElementById("cardDetails");
+      const pixDetails = document.getElementById("pixDetails");
+      
+      if (paymentMethod === "debito" || paymentMethod === "credito") {
+        cardDetails.style.display = "block";
+        pixDetails.style.display = "none";
+      } else if (paymentMethod === "pix") {
+        cardDetails.style.display = "none";
+        pixDetails.style.display = "block";
+      }
+    });
+
+    document.getElementById("paymentForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+      if (paymentMethod === "debito" || paymentMethod === "credito") {
+        window.location.href = "pagamento_cartao.html";
+      } else if (paymentMethod === "pix") {
+        window.location.href = "pix_pagar.html";
+      }
+    });
+  </script>
+</body>
+</html>
+
