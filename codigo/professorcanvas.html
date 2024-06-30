@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Nome: <input type="text" id="nome" /></p>
+    <p>Preço: <input type="text" id="preco" /></p>
+    <button onclick="enviar()">Enviar</button>
+    <button onclick="buscarDB()">Buscar</button>
+    <div id="tela"></div>
+
+    <script>
+      var url =
+        "https://ab0c7119-414b-422b-b908-e307bd307f7b-00-1gj31x0w8c64x.riker.replit.dev/produtos";
+
+      function enviar() {
+        var nome = document.getElementById("nome").value;
+        var preco = document.getElementById("preco").value;
+
+        salvarDB(nome, preco);
+
+        document.getElementById("nome").value = "";
+        document.getElementById("preco").value = "";
+      }
+
+      async function salvarDB(nome, preco) {
+        fetch(url, {
+          method: "POST",
+          headers: { "Content-type": "application/json; charset=UTF-8" },
+          body: JSON.stringify({
+            nome: nome,
+            preco: preco,
+          }),
+        })
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+          });
+      }
+
+      function imprime(vetor) {
+        var mensagem = "";
+        vetor.forEach(function (obj) {
+          mensagem += ` <br>
+                        <br> <span class='campo'>Nome</span>: ${obj.nome}
+                        <br> <span class='campo'>Preço</span>: ${obj.preco}
+                        <br>`;
+        });
+        return mensagem;
+      }
+
+      async function buscarDB() {
+        await fetch(url)
+          .then((response) => response.json())
+          .then((json) => {
+            console.log(json);
+            document.getElementById("tela").innerHTML = imprime(json);
+          });
+      }
+    </script>
+  </body>
+</html>
